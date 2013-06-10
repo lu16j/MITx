@@ -29,7 +29,7 @@ function read_operand(array) {
     var out = parseFloat(num);
     if(array[0] == '^') {
         array.shift();
-        out = Math.pow(out,evaluate(array))
+        out = Math.pow(out,read_term(array))
     }
     if(isNaN(out)) {
         throw("number expected");
