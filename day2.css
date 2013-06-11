@@ -1,0 +1,48 @@
+/*global stylesheet for calculator*/
+body {
+    background-image: url('http://img.wallpaperstock.net:81/minimal-gray-to-white-gradient-wallpapers_33797_1920x1200.jpg');
+}
+h1 {
+    font-size: 24pt;
+    text-align: center;
+    font-family: "Gabriola", "Georgia", sans-serif;
+}
+.calculator {
+    text-align: center;
+}
+.calculator button {
+    font-size: 16pt;
+    font-family: "Palatino Linotype", sans-serif;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
+.calculator input[type="text"] {
+    font-size: 16pt;
+    font-family: "Palatino Linotype", sans-serif;
+    padding: 10px;
+    margin: 5px;
+    width: 400px;
+    border-radius: 10px;
+}
+.calculator input[type="text"]:hover {
+    background-color: rgb(244,244,244);
+}
+.calculator input[type="text"]:focus {
+    background-color: rgb(230,230,230);
+}
+.output {
+    font-size: 16pt;
+    font-family: "Palatino Linotype", sans-serif;
+    padding: 10px;
+    margin: 5px;
+}
+.outtext {
+    padding: 10px;
+    margin: 5px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    border-radius: 10px;
+    background-image: url('http://www.lettersmarket.com/uploads/lettersmarket/demo/background_gradient_basic/background_gradient_yellow_28/background_gradient_yellow_28_jpg_max.jpg');
+}
