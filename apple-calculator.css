@@ -1,0 +1,48 @@
+.apple-calculate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 425;
+    height: 520;
+    background: -webkit-linear-gradient(top, #DBDBDB, #AFAFAF);
+}
+.output {
+    text-align: right;
+    position: relative;
+    top: 8px;
+    left: 22px;
+    height: 82px;
+    width: 272px;
+    padding: 2px 50px 2px 50px;
+    background-color: #EFFAC8;
+    font: 25pt sans-serif;
+    border-style: inset;
+    border-radius: 10px;
+    border-width: 5px;
+}
+.buttons {
+    position: relative;
+    top: 26px;
+    left: 17px;
+}
+button {
+    height: 52px;
+    width: 92px;
+    margin: 6px 3px;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+    border-radius: 10px;
+    font-family: "Arial";
+    font-size: 25pt;
+}
+button:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+}
+button[id="tall"] {
+    float: right;
+    position: relative;
+    right: 34px;
+    height: 116px;
+}
+button[id="long"] {
+    width: 188px;
+}
