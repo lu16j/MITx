@@ -2,7 +2,7 @@
 Calculates the input expression
 */
 function calculate(text) {
-    var pattern = /\d*\.?\d+|\+|\-|\*|\/|\w*\(|\)|\^|\w/g;          //matches nonzero digit sequences, operators and parentheses, g means global match
+    var pattern = /\d*\.?\d+|\+|\-|\*|\/|\w*\(|\)|\^|\%/g;          //matches nonzero digit sequences, operators and parentheses, g means global match
     var tokens = text.match(pattern);
     try {
         var val = evaluate(tokens);
@@ -66,11 +66,12 @@ function read_term(array){
     while(array.length > 0 & ['+','-'].indexOf(array[0]) == -1) {
         if(array[0] == ')') return val;
         var oper = array.shift();
-        if($.inArray(oper,['*','/']) == -1)   throw("unrecognized operator");
+        if($.inArray(oper,['*','/','%']) == -1)   throw("unrecognized operator");
         if(array.length === 0)  throw("missing operand");
         var temp = read_operand(array);
         if(oper == '*') val = val*temp;
         if(oper == '/') val = val/temp;
+        if(oper == '%') val = val%temp;
     }
     return val;
 }
@@ -83,7 +84,7 @@ function setup_calc(div) {
     var output = $('<div></div>');                      //single, double quotes don't matter in javascript
     var button = $('<button>Do thing</button>');
     button.bind('click',function(){
-        output.text(String(calculate(input.val())));    //val of input calculated, turned into string, added to output
+        output.html('<div class="output"><span class="outtext">'+String(calculate(input.val()))+'</span></div>');    //val of input calculated, turned into string, added to output
     });
     $(div).append(input,button,output);                 //creates HTML thing in the div
 }
