@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>The Third Things - Graphics</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="day3.js"></script>
+        <style>
+            #thing {
+                border: 1px black solid;
+                background-color: #FFE0E0;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Canvas Things</h2>
+        <p>
+            <canvas id="thing" width="200" height="200"></canvas>
+            <div>
+                <button onclick="thing_clear()">Clear</button>
+                <button onclick="thing_line()">Line</button>
+                <button onclick="thing_star()">Star</button>
+                <button onclick="thing_sine()">Sine</button>
+                <button onclick="thing_smiley()">Smiley</button>
+                <button onclick="thing_text()">Text</button>
+                <button onclick="thing_mouse()">Mouse</button>
+            </div>
+        </p>
+    </body>
+</html>
