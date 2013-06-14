@@ -1,7 +1,12 @@
 .graphcalc {
-    background: -webkit-radial-gradient(circle, #D0D0D0, #FFFFFF);
-    width: 420px;
+    background-color: #F0F0F0;
+    border: solid 1px lightgray;
 }
+
+.graphcalc .show {
+    text-align: center;
+}
+
 .graphcalc canvas {
     border: black solid 1px;
     background-color: rgb(214, 244, 252);
@@ -11,23 +16,52 @@
     background: -webkit-radial-gradient(circle, #FFFFFF, #D0D0D0);
 }
     
-.graphcalc text {
+.graphcalc label {
     margin-left: 10px;
+    font-size: 16pt;
+    font-family: "Palatino Linotype", sans-serif;
 }
 
 .graphcalc button{
 	margin-left: 10px;
     font-size: 16pt;
     font-family: "Palatino Linotype", sans-serif;
-    padding: 10px;
     margin: 5px;
+}
+
+.graphcalc .inputButton {
+    height: 40px;
+    width: 60px;
+}
+
+.graphcalc .plotButton {
+    height: 40px;
+    width: 130px;
+}
+
+.graphcalc .showButton {
+    padding: 10px;
+}
+
+.graphcalc button:hover{
+}
+
+.graphcalc input{
+    font-size: 16pt;
+    font-family: "Palatino Linotype", sans-serif;
     border-radius: 10px;
-    background: -webkit-radial-gradient(circle, #D0D0D0, #FFFFFF);
+    background-color: #EFFAC8;
+}
+.graphcalc input:hover {
+    background-color: #D9E5C2;
+}
+.graphcalc input:focus {
+    background-color: #E9F5D2;
 }
 
 .graphcalc #input1{
-    width: 374px;
+    width: 361px;
 }
 .graphcalc #input2{
-    width: 155px;
+    width: 131px;
 }
