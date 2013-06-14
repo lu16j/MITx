@@ -10,32 +10,37 @@
 .graphcalc canvas {
     border: black solid 1px;
     background-color: rgb(214, 244, 252);
-	margin-left: 10px; 
+/*	margin-left: 10px; */
 	margin-top: 10px;
 	margin-bottom: 10px;
     background: -webkit-radial-gradient(circle, #FFFFFF, #D0D0D0);
 }
     
 .graphcalc label {
-    margin-left: 10px;
+/*    margin-left: 10px;*/
     font-size: 16pt;
     font-family: "Palatino Linotype", sans-serif;
 }
 
 .graphcalc button{
-	margin-left: 10px;
+/*	margin-left: 10px;*/
     font-size: 16pt;
     font-family: "Palatino Linotype", sans-serif;
     margin: 5px;
 }
 
+.graphcalc .floatDiv {
+    float: left;
+    width: 420px;
+}
+
 .graphcalc .inputButton {
-    height: 40px;
+    height: 55px;
     width: 60px;
 }
 
-.graphcalc .plotButton {
-    height: 40px;
+.graphcalc .longButton {
+    height: 55px;
     width: 130px;
 }
 

@@ -4,17 +4,27 @@ $(document).ready(function () {
     });
 });
 
-function inputButton(text,output) {
-    var button = $('<button class="inputButton">'+text+'</button>');
-    button.on('click', function () {
-        switch(text) {
-            case 'C':
-                output.val('');
-                break
-            default:
-                output.val(output.val().concat(text));
-        }
-    });
+function inputButton(text, output) {
+    var classic = "inputButton";
+    var thing = function () {
+        output.val(output.val().concat(text));
+    };
+    if (text === 'C') {
+        classic = "longButton";
+        thing = function () {
+            output.val('');
+        }; 
+    }
+    if (text === '.') {
+        classic = "longButton";
+    }
+    if (text === '<') {
+        thing = function () {
+            output.val(output.val().substring(0,Math.max(0,output.val().length-1)));
+        };
+    }
+    var button = $('<button class='+classic+'>'+text+'</button>');
+    button.on('click', thing);
     return button;
 }
 
@@ -23,7 +33,7 @@ function setup_calc(div) {
     var input = $('<input></input>', {type: 'text', id: 'input1'});
     var xmin = $('<input></input>', {type: 'text', id: 'input2'});
     var xmax = $('<input></input>', {type: 'text', id: 'input2'});
-    var plot = $('<button class="plotButton">Plot</button>');
+    var plot = $('<button class="longButton">Plot</button>');
 
     var text0 = $('<label>f(x): </label>');
     var text1 = $('<label>min x: </label>');
@@ -31,31 +41,27 @@ function setup_calc(div) {
     plot.bind("click", function () {
         graphFunct(graph, input, xmin, xmax);
     });
-    var graphDiv = $('<div></div>');
-    var equationDiv = $('<div></div>');
-    var xDiv = $('<div></div>');
-    var buttonDiv = $('<div></div>');
+    var leftDiv = $('<div class="floatDiv"></div>');
+    var buttonDiv = $('<div class="floatDiv"></div>');
     
-    graphDiv.append(graph);
-    equationDiv.append(text0.append(input));
-    xDiv.append(text1.append(xmin), text2.append(xmax));
     buttonDiv.append(plot);
+    leftDiv.append(text0.append(input),text1.append(xmin),text2.append(xmax),graph);
     
-    var validInputs = ['C','e','(',')',
+    var validInputs = ['(',')','C',
                        '7','8','9','+','*','^',
                        '4','5','6','-','/','abs(',
                        '1','2','3','sin(','cos(','tan(',
-                       'x','0','.','asin(','acos(','atan(',
-                       'log(','sqrt(','pi'];
+                       '0','.','asin(','acos(','atan(',
+                       'x','pi','e','log(','sqrt(','<'];
     for(var i in validInputs) {
         buttonDiv.append(inputButton(validInputs[i],input));
     }
     
     var showButton = $('<button class="showButton"><img src="http://www.chimoosoft.com/osxpicks/images/graphericon.png" width=30 height=30></img></button>');
     
-    var widgetDiv = $('<div></div>').append(equationDiv, xDiv, graphDiv, buttonDiv);
+    var widgetDiv = $('<div></div>').append(leftDiv, buttonDiv);
     
-    $(div).append($('<div class="show"></div>').append(showButton), widgetDiv);
+    $(div).append($('<div class="show"></div>').append(showButton, widgetDiv));
     
     widgetDiv.toggle();
     $(div).css('width', "74px");
@@ -63,11 +69,11 @@ function setup_calc(div) {
     var reverse = true;
     showButton.on('click', function () {
         if(reverse) {
-            $(div).animate({width: "420px"}, "fast");
+            $(div).animate({width: "850px", height: "460px"}, "fast");
             reverse = !reverse;
         }
         else {
-            $(div).animate({width: "74px"}, "fast");
+            $(div).animate({width: "74px", height: "74px"}, "fast");
             reverse = !reverse;
         }
         widgetDiv.toggle("fast","swing");
@@ -92,7 +98,12 @@ function graphFunct(graph, input, xmin, xmax) {
         var xstart = parseFloat(xmin.val());
         var xend = parseFloat(xmax.val());
         
-        if (!(xend > xstart))   throw("Invalid min and/or max")
+        if (!(xend > xstart)) {
+            xstart = -10;
+            xend = 10;
+            xmin.val(String(xstart));
+            xmax.val(String(xend));
+        }
         
         var yvalues = [];
         
@@ -102,8 +113,14 @@ function graphFunct(graph, input, xmin, xmax) {
         for (var x=0; x<=graph.width(); x++) {
             var y = calculator.evaluate(equat,{'x':fromX(x,xstart,xend,graph)});
             yvalues.push(y);
-            ymax = Math.max(ymax,y);
-            ymin = Math.min(ymin,y);
+            if(!isNaN(y)) {
+                ymax = Math.max(ymax,y);
+                ymin = Math.min(ymin,y);
+            }
+        }
+        if(ymin > ymax) {
+            ymin = -10;
+            ymax = 10;
         }
         var padding = 0.1*(ymax-ymin);
         ymax += padding;
