@@ -93,7 +93,10 @@ var Inspector = function ($) {
       try {
           var selector = root.find(".selector");
           var selectorStr = selector.val();
-          console.log(selectorStr);
+          var nth = parseInt(root.find(".nth").val());
+          if(!isNaN(nth)) {
+              selectorStr += ":eq("+String(nth)+")";
+          }
           currentThing = $(selectorStr);
           var textEditor = root.find(".text-editor");
           var text = textEditor.val();
@@ -117,11 +120,14 @@ var Inspector = function ($) {
       $(this).css('border', $(this).attr('data-border'));
   }
   
-  var inspectClick = function() {
+  var inspectClick = function(evt) {
+      evt.stopPropagation();
+      evt.preventDefault();
       $("#wrapper *").css('border', $(this).attr('data-border'));
       $("#wrapper *").off();
-      currentThing = $(this);
-      displaySearch(currentThing);
+      var selector = root.find(".selector");
+      selector.val($(this).prop('tagName'));
+      search();
       
 //      var copy = thing.clone();
 //      var newThing = $('<div></div>').append(copy);
@@ -138,6 +144,8 @@ var Inspector = function ($) {
     root.append(template);
     root.find(".handle").on("click",toggle);
     root.find(".selector").on("keyup",search);
+    root.find(".nth").on("keyup",search);
+    root.find(".search").on("click",search);
     root.find(".text-editor").on("keyup",update);
     root.find(".inspect").on("click",inspected);
   };

@@ -1,0 +1,33 @@
+.graphcalc {
+    background: -webkit-radial-gradient(circle, #D0D0D0, #FFFFFF);
+    width: 420px;
+}
+.graphcalc canvas {
+    border: black solid 1px;
+    background-color: rgb(214, 244, 252);
+	margin-left: 10px; 
+	margin-top: 10px;
+	margin-bottom: 10px;
+    background: -webkit-radial-gradient(circle, #FFFFFF, #D0D0D0);
+}
+    
+.graphcalc text {
+    margin-left: 10px;
+}
+
+.graphcalc button{
+	margin-left: 10px;
+    font-size: 16pt;
+    font-family: "Palatino Linotype", sans-serif;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    background: -webkit-radial-gradient(circle, #D0D0D0, #FFFFFF);
+}
+
+.graphcalc #input1{
+    width: 374px;
+}
+.graphcalc #input2{
+    width: 155px;
+}
