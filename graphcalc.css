@@ -14,6 +14,7 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
     background: -webkit-radial-gradient(circle, #FFFFFF, #D0D0D0);
+    background: -moz-radial-gradient(circle, #FFFFFF, #D0D0D0);
 }
     
 .graphcalc label {
@@ -46,9 +47,6 @@
 
 .graphcalc .showButton {
     padding: 10px;
-}
-
-.graphcalc button:hover{
 }
 
 .graphcalc input{
