@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chard!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+<!--        navigation bar!-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="#">Chard</a>
+                <ul class="nav">
+                    <li class="active"><a href="#">This page</a></li>
+                    <li><a href="circuits.html">Other page</a></li>
+                    <li><a href="http://www.google.com/">Google</a></li>
+                </ul>
+            </div>
+        </div>
+<!--        Title!-->
+        <h1>What <em>is</em> Chard?</h1>
+<!--        Modal popup!-->
+        <p>Chard is a vegetable! <a href="#popup" role="button" class="btn" data-toggle="modal">Look!</a></p>
+        <div id="popup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="popupLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3 id="popupLabel">This is a chard</h3>
+            </div>
+            <div class="modal-body">
+                <img src="http://www.superfoodsmagazine.com/wp-content/uploads/2012/09/swiss-chard-6.jpg" width=300>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">I understand now!</button>
+            </div>
+        </div>
+<!--        Tabs!-->
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#i" data-toggle="tab">I am</a></li>
+            <li><a href="#you" data-toggle="tab">You are</a></li>
+            <li><a href="#we" data-toggle="tab">We are</a></li>
+        </ul>
+         
+        <!-- The tab content. -->
+        <div id="my-tab-content" class="tab-content">
+         
+            <div class="tab-pane active" id="i">
+                <p>Awesome</p>
+            </div>
+         
+            <div class="tab-pane" id="you">
+                <p>Amazing</p>
+            </div>
+         
+            <div class="tab-pane" id="we">
+                <p>Perfect</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span3">
+                <h2>Plant</h2>
+                <p>Any member of the kingdom Plantae, comprising multicellular organisms that typically produce their own food from inorganic matter by the process of photosynthesis and that have more or less rigid cell walls containing cellulose.</p>
+            </div>
+            <div class="span3">
+                <h2>Food</h2>
+                <p>Any nourishing substance that is eaten, drunk, or otherwise taken into the body to sustain life, provide energy, promote growth, etc.</p>
+            </div>
+            <div class="span3">
+                <h2>Vegetable</h2>
+                <p>Any plant whose fruit, seeds, roots, tubers, bulbs, stems, leaves, or flower parts are used as food, as the tomato, bean, beet, potato, onion, asparagus, spinach, or cauliflower.</p>
+            </div>
+            <div class="span3">
+                <h2>Chard</h2>
+                <p>Avariety of beet, <em>Beta vulgaris cicla</em>,  having leaves and leafstalks that are used as a vegetable.</p>
+            </div>
+        </div>
+        <div class="pagination">
+            <ul>
+                <li><a href="#">Prev</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
