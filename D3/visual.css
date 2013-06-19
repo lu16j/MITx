@@ -1,8 +1,12 @@
 .chart {
     border: 1px solid gray;
+    float: left;
 }
 .chart rect {
-    fill: rgb(100,50,150);
+    stroke: white;
+}
+.chart rect:hover {
+    fill: rgb(160,80,240);
     stroke: white;
 }
 .chart text {
@@ -12,8 +16,18 @@
     fill: orange;
 }
 .chart .yscale-label {
-    fill: blue;
+    fill: gray;
 }
 .chart line {
     stroke: gray;
+}
+
+.pie {
+    border: 1px solid lightgray;
+    float: left;
+    margin-left: 10px;
+}
+
+.pie .arc {
+    stroke: white;
 }
