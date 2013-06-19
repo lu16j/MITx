@@ -89,31 +89,50 @@ var pieChart = d3.select(".pie-container")
         .attr("height", outerHeight)
         .attr("width", outerWidth);
 
-var testArc = d3.svg.arc()
-    .innerRadius(50)
+var test3Arc = d3.svg.arc()
+    .innerRadius(75)
     .outerRadius(100);
+
+var test2Arc = d3.svg.arc()
+    .innerRadius(50)
+    .outerRadius(75);
 
 //pieChart.append("path")
 //    .attr("d", testArc)
 //    .attr("transform", "translate(150,150)");
 
-var pieMax = d3.max(data[3], function (d) { return d.y; });
+var pie3Max = d3.max(data[3], function (d) { return d.y; });
 
-var pieColorScale = d3.scale.linear()
-    .domain([0,pieMax])
-    .range([50,205]);
+var pie2Max = d3.max(data[2], function (d) { return d.y; });
+
+var pie3ColorScale = d3.scale.linear()
+    .domain([0,pie3Max])
+    .range([100,255]);
+
+var pie2ColorScale = d3.scale.linear()
+    .domain([0,pie2Max])
+    .range([100,255]);
 
 var pieData = d3.layout.pie().sort(null)
     .value(function(d) { return d.y; });
 
-var g = pieChart.selectAll(".arc").data(pieData(data[3])).enter()
+var g = pieChart.selectAll(".g").data(pieData(data[3])).enter()
     .append("g")
-        .attr("class", "arc");
+        .attr("class", "g");
+
+var h = pieChart.selectAll(".h").data(pieData(data[2])).enter()
+    .append("g")
+        .attr("class", "h");
 
 g.append("path")
-    .attr("d", testArc)
+    .attr("d", test3Arc)
     .attr("transform", "translate(150,150)")
-    .attr("fill", function (d) { return "rgb(" + Math.round(pieColorScale(d.value) / 3 * 2) + "," + Math.round(pieColorScale(d.value) / 3) + "," + Math.round(pieColorScale(d.value)) + ")"; });
+    .attr("fill", function (d) { return "rgb(" + Math.round(pie3ColorScale(d.value) / 3 * 2) + "," + Math.round(pie3ColorScale(d.value) / 3) + "," + Math.round(pie3ColorScale(d.value)) + ")"; });
+
+h.append("path")
+    .attr("d", test2Arc)
+    .attr("transform", "translate(150,150)")
+    .attr("fill", function (d) { return "rgb(" + Math.round(pie2ColorScale(d.value) / 3) + "," + Math.round(pie2ColorScale(d.value) / 3 * 2) + "," + Math.round(pie2ColorScale(d.value)) + ")"; });
         
 
 //chart.selectAll("rect").data(data).enter()
