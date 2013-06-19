@@ -20,10 +20,32 @@
                 </ul>
             </div>
         </div>
-<!--        Title!-->
-        <h1>What <em>is</em> Chard?</h1>
-<!--        Modal popup!-->
-        <p>Chard is a vegetable! <a href="#popup" role="button" class="btn" data-toggle="modal">Look!</a></p>
+<!--        Carousel-->
+        <div id="myCarousel" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item"><img src="http://pitchforkdiaries.com/wp-content/uploads/2010/09/garden-chard.jpg"></div>
+            <div class="item"><img src="http://corefitnessnj.files.wordpress.com/2012/02/chard-swiss-bright-lights1.jpg"></div>
+            <div class="item"><img src="http://foodtruthonline.com/wp-content/uploads/2012/10/chard-copy.jpg"></div>
+            <div class="item"><img src="http://www.harvest-spoon.com/wp-content/uploads/2012/09/Chard-bunch.jpg"></div>
+              <div class="carousel-caption">
+        <!--        Title!-->
+                <h1>What <em>is</em> Chard?</h1>
+        <!--        Modal popup!-->
+                <p>Chard is a vegetable! <a href="#popup" role="button" class="btn" data-toggle="modal">Look!</a></p>
+              </div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+<!--        popup content-->
         <div id="popup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="popupLabel" aria-hidden="true">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -58,7 +80,7 @@
                 <p>Perfect</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row-fluid">
             <div class="span3">
                 <h2>Plant</h2>
                 <p>Any member of the kingdom Plantae, comprising multicellular organisms that typically produce their own food from inorganic matter by the process of photosynthesis and that have more or less rigid cell walls containing cellulose.</p>
