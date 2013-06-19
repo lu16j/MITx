@@ -6,6 +6,14 @@
     stroke: white;
 }
 .chart text {
-    fill: orange;
     font: 10px sans-serif;
+}
+.chart .bar-label {
+    fill: orange;
+}
+.chart .yscale-label {
+    fill: blue;
+}
+.chart line {
+    stroke: gray;
 }
