@@ -100,20 +100,20 @@ var testArc = d3.svg.arc()
 var pieMax = d3.max(data[3], function (d) { return d.y; });
 
 var pieColorScale = d3.scale.linear()
-    .domain(d3.range(pieMax))
-    .range([100,205]);
+    .domain([0,pieMax])
+    .range([50,205]);
 
-var pie = d3.layout.pie().sort(null)
+var pieData = d3.layout.pie().sort(null)
     .value(function(d) { return d.y; });
 
-var g = pieChart.selectAll(".arc").data(pie(data[3])).enter()
+var g = pieChart.selectAll(".arc").data(pieData(data[3])).enter()
     .append("g")
         .attr("class", "arc");
 
 g.append("path")
     .attr("d", testArc)
     .attr("transform", "translate(150,150)")
-    .attr("fill", function (d, j) { return "rgb(" + Math.round(pieColorScale(d) / 3 * 2) + "," + Math.round(pieColorScale(d) / 3) + "," + pieColorScale(d) + ")"; });
+    .attr("fill", function (d) { return "rgb(" + Math.round(pieColorScale(d.value) / 3 * 2) + "," + Math.round(pieColorScale(d.value) / 3) + "," + Math.round(pieColorScale(d.value)) + ")"; });
         
 
 //chart.selectAll("rect").data(data).enter()
