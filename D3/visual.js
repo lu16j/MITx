@@ -124,7 +124,7 @@ var h = pieChart.selectAll(".h").data(pieData(data[2])).enter()
     .append("g")
         .attr("class", "h");
 
-g.append("path")
+var gPie = g.append("path")
     .attr("d", test3Arc)
     .attr("transform", "translate(150,150)")
     .attr("fill", function (d) { return "rgb(" + Math.round(pie3ColorScale(d.value) / 3 * 2) + "," + Math.round(pie3ColorScale(d.value) / 3) + "," + Math.round(pie3ColorScale(d.value)) + ")"; });
@@ -133,6 +133,15 @@ h.append("path")
     .attr("d", test2Arc)
     .attr("transform", "translate(150,150)")
     .attr("fill", function (d) { return "rgb(" + Math.round(pie2ColorScale(d.value) / 3) + "," + Math.round(pie2ColorScale(d.value) / 3 * 2) + "," + Math.round(pie2ColorScale(d.value)) + ")"; });
+
+function goTwo() {
+    pie3ColorScale.domain([0,pie2Max]);
+    gPie.data(pieData(data[2])).append("path").transition()
+        .duration(1000)
+        .attr("d", test3Arc)
+        .attr("transform", "translate(150,150)")
+        .attr("fill", function (d) { return "rgb(" + Math.round(pie3ColorScale(d.value) / 3) + "," + Math.round(pie3ColorScale(d.value) / 3 * 2) + "," + Math.round(pie3ColorScale(d.value)) + ")"; });
+}
         
 
 //chart.selectAll("rect").data(data).enter()
