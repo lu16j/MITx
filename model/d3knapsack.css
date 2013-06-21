@@ -1,3 +1,7 @@
-.knapsack {
+.knapsack svg {
     border-bottom: 1px solid gray;
+}
+
+blockquote p {
+    font: 12pt sans-serif;
 }

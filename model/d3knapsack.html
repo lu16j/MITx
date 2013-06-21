@@ -5,14 +5,46 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
         <script src="../boots/bootstrap/js/bootstrap.min.js"></script>
+        <script src="http://www.parsecdn.com/js/parse-1.2.8.min.js"></script>
         <link href="../boots/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="../boots/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="d3knapsack.css" rel="stylesheet">
     </head>
     <body>
         <div class="container text-center" data-maxweight="20">
-            <h1>The Knapsack Problem</h1>
-            <h3>Do things</h3>
+            
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Who are you?</a>
+                    <ul class="nav pull-left">
+                        <li class="divider-vertical"></li>
+                        <li><form class="navbar-search pull-left">
+                            <input type="text" class="input-medium search-query username" placeholder="Username">
+                        </form></li>
+                        <li class="divider-vertical"></li>
+                        <li><button class="btn btn-primary pull-left login">Login</button></li>
+                    </ul>
+                    <ul class="nav pull-right userfunctions">
+                        <li><a href="#" class="save">Save</a></li>
+                        <li><a href="#" class="submit">Submit</a></li>
+                    </ul>
+                    <ul class="nav pull-right"><li><a href="#" class="help">Help</a></li></ul>
+                </div>
+            </div>
+            <div class="alert fade in correct">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                You would make a great hipster prefrosh!
+            </div>
+            <div class="alert fade in wrong">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                You wish.
+            </div>
+            <h1>The Prefrosh's Knapsack Problem</h1>
+            <h5>You are an exceptionally weak prefrosh
+                trying to stuff the most valuable free swag<br>
+                from HPV (Hipster PreView) weekend into your sack.
+                You can only carry 20lbs.
+            </h5>
             <div class="row-fluid">
                 <div class="span6 value"></div>
                 <div class="span6 weight"></div>
