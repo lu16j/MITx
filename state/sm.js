@@ -146,4 +146,45 @@ var sm = SM();
 sm.initialize(components, connections);
 
 //should return [0, -1, 2, -4, 8, -16, 32, -64, 128, -256]
-console.log(sm.transduce([1,0,0,0,0,0,0,0,0,0]));
+var result = sm.transduce([1,0,0,0,0,0,0,0,0,0]);
+console.log(result);
+
+/************************
+* CHART MAGIC HAPPENS HERE
+************************/
+
+var chart = $('.canvas').highcharts({
+    title: {text: 'State Machine'},
+    xAxis: {title: {text: 'Time Step'}, categories: []},
+    yAxis: {
+        title: {text: 'Output'},
+        plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#808080'
+        }]
+    },
+    exporting: {enabled: false},
+    tooltip: {},
+    legend: {},
+    series: [{name: 'Test', id: 'a', data: result}]
+});
+
+function step() {
+    chart.highcharts().get('a').addPoint(sm.step(0));
+}
+
+$('tspan').eq($('tspan').length-1).hide();
+
+var interval;
+
+$('.stop').on('click', function () {
+    if($(this).text() === "Start") {
+        interval = setInterval(step, 1000);
+        $(this).text("Stop");
+    }
+    else {
+        clearInterval(interval);
+        $(this).text("Start");
+    }
+});

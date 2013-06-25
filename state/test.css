@@ -3,10 +3,11 @@
     background-color: #ddddff;
     width: 100px;
     height: 100px;
-    margin: 50px;
+    margin: 15px;
     border-radius: 10px;
     opacity: 0.5;
-    float: left;
+/*    float: left;*/
+    display: inline-table;
     text-align: center;
 }
       
@@ -23,4 +24,10 @@
 #state3 {
   left: 100px;
   top: 250px;
+}
+
+.canvas {
+    height: 300px;
+    width: 400px;
+/*    border: 1px solid gray;*/
 }

@@ -3,12 +3,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script type="text/javascript" src="jsPlumb.js "></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="../boots/bootstrap/js/bootstrap.min.js"></script>
 <link href="test.css" rel="stylesheet">
+<link href="../boots/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../boots/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="state1" class="item">One</div>
-    <div id="state2" class="item">Two</div>
-    <div id="state3" class="item">Seven</div>
+    <div class="container">
+    <div class="jsplumb">
+        <div id="state1" class="item">One</div>
+        <div id="state2" class="item">Two</div>
+        <div id="state3" class="item">Seven</div>
+    </div>
+    <div class="canvas"></div>
+    <button class="stop btn btn-primary">Start</button>
+    </div>
     <script src="test.js"></script>
     <script src="sm.js"></script>
 </body>

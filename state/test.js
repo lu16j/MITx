@@ -121,11 +121,11 @@ jsPlumb.ready(function() {
         paintStyle:{ 
             strokeStyle:"#225588",
             fillStyle:"transparent",
-            radius:7,
+            radius:5,
             lineWidth:2 
         },				
         isSource:true,
-        connector:[ "Flowchart", { stub:[20, 20], gap:10, cornerRadius:5, alwaysRespectStubs:true } ],								                
+        connector:[ "Flowchart", { stub:[5, 5], gap:5, cornerRadius:5, alwaysRespectStubs:true } ],								                
         connectorStyle:connectorPaintStyle,
         hoverPaintStyle:endpointHoverStyle,
         connectorHoverStyle:connectorHoverStyle,
@@ -134,7 +134,7 @@ jsPlumb.ready(function() {
     jsPlumb.makeTarget($('.item'), {
         anchor: 'Continuous',
         endpoint:"Dot",					
-        paintStyle:{ fillStyle:"#558822",radius:11 },
+        paintStyle:{ fillStyle:"#558822",radius:5 },
         hoverPaintStyle:endpointHoverStyle,
         maxConnections:-1,
         dropOptions:{ hoverClass:"hover", activeClass:"active" },
