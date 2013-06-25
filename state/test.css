@@ -1,0 +1,26 @@
+.item {
+    border: 1px solid black;
+    background-color: #ddddff;
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    border-radius: 10px;
+    opacity: 0.5;
+    float: left;
+    text-align: center;
+}
+      
+#state1 {
+  left: 100px;
+  top: 100px;
+}
+      
+#state2 {
+  left: 250px;
+  top: 100px;
+}
+      
+#state3 {
+  left: 100px;
+  top: 250px;
+}
