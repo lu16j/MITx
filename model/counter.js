@@ -50,24 +50,15 @@ var counter = (function () {
     }
     
     function View(div, model, controller) {
-        var display = $('<div><button class="btn btn-primary">Show</button><br><br><blockquote>The current value of the counter is <span>0</span>.</blockquote></div>');
+        var display = $('<div><blockquote>The current value of the counter is <span>0</span>.</blockquote></div>');
         var value = display.find('span');
-        var button = display.find('button');
         
-        button.on('click', function () {
-            display.find('blockquote').toggle('fast', 'swing');
-            if ($(this).text() === 'Show')
-                $(this).text('Hide');
-            else
-                $(this).text('Show');
-        });
         function update(val) {
             value.text(val);
         }
         model.on('update', update);
         
         div.append(display);
-        display.find('blockquote').toggle();
         return {};
     }
     

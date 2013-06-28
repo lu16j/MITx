@@ -6,7 +6,6 @@
     margin: 15px;
     border-radius: 10px;
     opacity: 0.5;
-/*    float: left;*/
     display: inline-table;
     text-align: center;
 }
@@ -27,7 +26,15 @@
 }
 
 .canvas {
-    height: 300px;
-    width: 400px;
-/*    border: 1px solid gray;*/
+    width: 640px;
+}
+
+.table-container {
+    width: 320px;
+}
+
+.view {
+    float: left;
+    height: 240px;
+    overflow: auto;
 }
